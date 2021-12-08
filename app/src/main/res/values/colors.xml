@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#f18513</color>
+    <color name="purple_500">#f18513</color>
+    <color name="purple_700">#3569d4</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="bg">#eff4ff</color>
+    <color name="text_color">#444d61</color>
+    <color name="heading">#3e5075</color>
+    <color name="input_bg">#eff4ff</color>
+    <color name="input_text">#1b1f30</color>
+
+
+    <color name="granny_smith"> #8ea0a1</color>
+    <color name="governor_bay"> #3a3dad</color>
+    <color name="cod_gray"> #0c0c0c</color>
+    <color name="tango"> #f18513</color>
+    <color name="flamingo"> #e85624</color>
+    <color name="apple"> #5dae36</color>
+    <color name="fountain_blue"> #54c3b0</color>
+    <color name="eastern_blue"> #1f879c</color>
+    <color name="lunar_green"> #444c41</color>
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/drawable/downloadicon.xml" value="0.2203125" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/drawable/ic_back.xml" value="0.2203125" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_book_mark.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_downloaded_images.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_full_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_pages.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_pages_viewer.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_tab_layouts.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/book_cardView.xml" value="0.1" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/book_cardview.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/bookmark_rowdesign.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/coverdesign.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/fragment_frag01.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/fragment_frag02.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/fragment_frag03.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/galleryitem.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/lateastbooklayout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/navigationheader.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/pagerviewer_cardview.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/pages_cardview.xml" value="0.22" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/pagesdesign.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/toolbar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/menu/drawermenu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/menu/toolbarmenu.xml" value="0.20416666666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookPages">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/pagestoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Book Detail" />
+
+    <RelativeLayout
+        android:id="@+id/newbookcover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pagestoolbar"
+        android:padding="5sp"
+        android:background="@color/purple_700">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/page_card_view_simple"
+            android:layout_width="100sp"
+            android:layout_height="150sp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="2dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3sp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="5dp">
+
+                <ImageView
+                    android:id="@+id/lateastbookpages"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/pdficon" />
+
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/booktitlepages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="5sp"
+            android:layout_toRightOf="@+id/page_card_view_simple"
+            android:text="book_name"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/release_Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Book Release Date"
+            android:textSize="15sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginLeft="15sp"
+            android:textColor="@color/white"
+            android:layout_below="@id/booktitlepages"
+            android:layout_toRightOf="@+id/page_card_view_simple"/>
+
+        <TextView
+            android:id="@+id/bookviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Views"
+            android:textSize="15sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginLeft="15sp"
+            android:textColor="@color/white"
+            android:layout_below="@id/release_Date"
+            android:layout_toRightOf="@+id/page_card_view_simple"/>
+
+        <Button
+            android:id="@+id/downloadtotalbook"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:text="Save Book"
+            android:textSize="13sp"
+            android:background="#25011270"
+            android:layout_marginTop="5sp"
+            android:layout_marginLeft="5sp"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@id/page_card_view_simple"
+            android:layout_below="@+id/bookviews"/>
+
+        <TextView
+            android:id="@+id/recentpagenumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/downloadtotalbook"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="5sp"
+            android:layout_toRightOf="@+id/page_card_view_simple"
+            android:text="Recent Page number"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pagesrecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/newbookcover"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginEnd="5sp"
+        android:layout_marginBottom="5sp"
+        android:layoutDirection="rtl" />
+
+</RelativeLayout>
