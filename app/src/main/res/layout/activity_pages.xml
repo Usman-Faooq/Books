@@ -80,16 +80,16 @@
             android:layout_toRightOf="@+id/page_card_view_simple"/>
 
         <TextView
-            android:id="@+id/bookviews"
+            android:id="@+id/pagesbookviews"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Views"
-            android:textSize="15sp"
-            android:layout_marginTop="5sp"
-            android:layout_marginLeft="15sp"
-            android:textColor="@color/white"
             android:layout_below="@id/release_Date"
-            android:layout_toRightOf="@+id/page_card_view_simple"/>
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="5sp"
+            android:layout_toRightOf="@+id/page_card_view_simple"
+            android:text="Views"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/downloadtotalbook"
@@ -102,7 +102,26 @@
             android:layout_marginLeft="5sp"
             android:textColor="@color/white"
             android:layout_toRightOf="@id/page_card_view_simple"
-            android:layout_below="@+id/bookviews"/>
+            android:layout_below="@+id/pagesbookviews"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/newbookcover">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/recentview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F1F1F1"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/recentpagenumber"
@@ -112,22 +131,50 @@
             android:layout_marginLeft="15sp"
             android:layout_marginTop="5sp"
             android:layout_toRightOf="@+id/page_card_view_simple"
-            android:text="Recent Page number"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:text="Book Recent Page"
+            android:textSize="17sp" />
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/recentpageimage"
+            android:layout_width="100sp"
+            android:layout_height="150sp"
+            android:layout_gravity="center"
+            android:layout_margin="7sp"
+            android:elevation="2dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
 
-    </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3sp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="5dp">
+
+                <ImageView
+                    android:id="@+id/recentbookpage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/pdficon" />
+
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pagesrecyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/newbookcover"
+        android:layout_below="@+id/recentview"
         android:layout_marginStart="5sp"
         android:layout_marginTop="5sp"
         android:layout_marginEnd="5sp"
         android:layout_marginBottom="5sp"
         android:layoutDirection="rtl" />
+
+    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

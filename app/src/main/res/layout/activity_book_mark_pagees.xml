@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookMark.BookMarkActivity">
+    tools:context=".BookMark.BookMarkPagees">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/bookmarktoolbar"
+        android:id="@+id/bookmarkpagestoolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/purple_700"
@@ -18,9 +18,10 @@
         app:title="Book Detail" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/bookmark_recyclerview"
+        android:id="@+id/bookmarkpages_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layoutDirection="rtl"
-        android:layout_below="@id/bookmarktoolbar"/>
+        android:layout_below="@id/bookmarkpagestoolbar"/>
+
 </RelativeLayout>

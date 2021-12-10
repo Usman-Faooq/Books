@@ -9,7 +9,7 @@
         android:id="@+id/pagerimage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="35sp"
+        android:layout_marginBottom="30sp"
         android:layout_marginLeft="5sp"
         android:layout_marginRight="5sp"
         android:layout_marginTop="5sp"

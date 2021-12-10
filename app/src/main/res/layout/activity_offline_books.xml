@@ -4,23 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookMark.BookMarkActivity">
+    tools:context=".OfflineBook.OfflineBooks">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/bookmarktoolbar"
+        android:id="@+id/offlinetoolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/purple_700"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="Book Detail" />
+        app:title="Downloaded" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/bookmark_recyclerview"
+        android:id="@+id/dirlistrecyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layoutDirection="rtl"
-        android:layout_below="@id/bookmarktoolbar"/>
+        android:layout_below="@id/offlinetoolbar"/>
 </RelativeLayout>

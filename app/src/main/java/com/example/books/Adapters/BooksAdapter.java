@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.example.books.BookPages;
 import com.example.books.R;
 import com.example.books.VeriablesClasses.RetriveBookData;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
@@ -24,6 +25,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.MyViewHolder
 
     List<RetriveBookData> list;
     Context mycontext;
+    FirebaseFirestore firestore;
 
     public BooksAdapter(List<RetriveBookData> list, Context mycontext) {
         this.list = list;
@@ -39,6 +41,8 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        firestore = FirebaseFirestore.getInstance();
+
         Glide.with(holder.imageView.getContext())
                 .load(list.get(position).getBook_cover()).into(holder.imageView);
         holder.textView.setText(list.get(position).getBook_name());
@@ -49,10 +53,15 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.MyViewHolder
                 String bookname = list.get(position).getBook_name();
                 String coverurl = list.get(position).getBook_cover();
                 String reldate = list.get(position).getRelease_date();
+                int v = list.get(position).getBook_views();
+                String views = String.valueOf(v);
+
+                firestore.collection("books").document(bookid).update("book_views",++v);
                 Intent i = new Intent(mycontext, BookPages.class);
                 i.putExtra("getbookname",bookname);
                 i.putExtra("bookcover", coverurl);
                 i.putExtra("currentid", bookid);
+                i.putExtra("VIEWS", views);
                 i.putExtra("releasedate", reldate);
                 mycontext.startActivity(i);
             }

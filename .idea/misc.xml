@@ -6,9 +6,12 @@
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/drawable/downloadicon.xml" value="0.2203125" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/drawable/ic_back.xml" value="0.2203125" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_book_mark.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_book_mark_pagees.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_downloaded_images.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_full_page.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_offline_book_pages.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_offline_books.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_pages.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_pages_viewer.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/activity_tab_layouts.xml" value="0.20416666666666666" />
@@ -22,9 +25,11 @@
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/galleryitem.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/lateastbooklayout.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/navigationheader.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/offline_dirlist_cardview.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/pagerviewer_cardview.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/pages_cardview.xml" value="0.22" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/pagesdesign.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/pageselection_cardview.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/layout/toolbar.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/menu/drawermenu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/Books/app/src/main/res/menu/toolbarmenu.xml" value="0.20416666666666666" />

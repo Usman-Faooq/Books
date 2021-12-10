@@ -15,6 +15,10 @@ public interface DAO {
     @Query("SELECT EXISTS(SELECT * FROM BookMarks WHERE book_name = :bookname and page_number = :pagenum)")
     Boolean is_exist(String pagenum, String bookname);
 
-    @Query("SELECT * FROM BookMarks ORDER BY uid DESC LIMIT 10")
-    List<BookMarks> getallData();
+    @Query("SELECT * FROM BookMarks where book_name = :bookname ORDER BY uid DESC LIMIT 10")
+    List<BookMarks> getallData(String bookname);
+
+    @Query("SELECT DISTINCT book_name from BookMarks")
+    List<String> getBookName();
+
 }

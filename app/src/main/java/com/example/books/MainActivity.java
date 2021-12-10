@@ -9,12 +9,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -26,6 +24,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.example.books.Adapters.BooksAdapter;
+import com.example.books.BookMark.BookMarkActivity;
+import com.example.books.OfflineBook.OfflineBooks;
 import com.example.books.VeriablesClasses.RetriveBookData;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -35,6 +35,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     BooksAdapter booksAdapter;
     ImageView lateastimg;
-    TextView booknameview, rel_date;
+    TextView booknameview, rel_date, views;
     FirebaseFirestore firestore;
     ArrayList<String> booknamelist;
     String bookname, coverurl, releasedate;
-    int id;
+    int id, bookviews;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
         lateastimg = findViewById(R.id.lateastbook);
         booknameview = findViewById(R.id.booktitle);
+        views = findViewById(R.id.bookviews);
         rel_date = findViewById(R.id.rel_date);
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
@@ -80,13 +82,24 @@ public class MainActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.download_books:
-                        Intent intent = new Intent(MainActivity.this, DownloadedImages.class);
-                        intent.putStringArrayListExtra("booknamelist", booknamelist);
+                        //Intent intent = new Intent(MainActivity.this, DownloadedImages.class);
+                        //intent.putStringArrayListExtra("booknamelist", booknamelist);
+                        //startActivity(intent);
+                        ArrayList<String> filelist = new ArrayList<>();
+                        File storage = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+                        File dir = new File(storage.getAbsolutePath()+"/PDF_Books");
+                        File[] listdir = dir.listFiles();
+                        filelist.clear();
+                        for (File file : listdir){
+                            filelist.add(file.getPath());
+                        }
+                        Intent intent = new Intent(MainActivity.this, OfflineBooks.class);
+                        intent.putStringArrayListExtra("Dir_List", filelist);
                         startActivity(intent);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.bookmarks:
-                        Intent i = new Intent(MainActivity.this, BookMark.class);
+                        Intent i = new Intent(MainActivity.this, BookMarkActivity.class);
                         startActivity(i);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
@@ -111,9 +124,11 @@ public class MainActivity extends AppCompatActivity {
                         bookname = snapshot.getString("book_name");
                         coverurl = snapshot.getString("book_cover");
                         releasedate = snapshot.getString("release_date");
+                        bookviews = snapshot.getLong("book_views").intValue();
                     }
                     Glide.with(lateastimg.getContext()).load(coverurl).placeholder(R.drawable.pdficon).into(lateastimg);
                     booknameview.setText(bookname);
+                    views.setText("Views: " + bookviews);
                     rel_date.setText(releasedate);
                 }
             }
@@ -122,11 +137,16 @@ public class MainActivity extends AppCompatActivity {
         lateastimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                firestore.collection("books").document(String.valueOf(id)).update("book_views",++bookviews);
+
                 Intent i = new Intent(MainActivity.this, BookPages.class);
                 String currentid = String.valueOf(id);
+                String v = String.valueOf(bookviews);
                 i.putExtra("getbookname", bookname);
                 i.putExtra("bookcover", coverurl);
                 i.putExtra("currentid", currentid);
+                i.putExtra("VIEWS", v);
                 i.putExtra("releasedate", releasedate);
                 startActivity(i);
             }
@@ -147,8 +167,8 @@ public class MainActivity extends AppCompatActivity {
                         if (bookid == id){
                             break;
                         }else{
-                        RetriveBookData obj = snapshot.toObject(RetriveBookData.class);
-                        list.add(obj);
+                            RetriveBookData obj = snapshot.toObject(RetriveBookData.class);
+                            list.add(obj);
                         }
                     }
 
@@ -158,6 +178,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        recreate();
     }
 
     @Override
@@ -172,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.toolbarbookmark:
-                Intent intent = new Intent(this, BookMark.class);
+                Intent intent = new Intent(this, BookMarkActivity.class);
                 startActivity(intent);
             default:
                 return false;

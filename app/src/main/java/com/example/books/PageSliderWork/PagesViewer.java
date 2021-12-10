@@ -2,6 +2,8 @@ package com.example.books.PageSliderWork;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
@@ -13,6 +15,9 @@ import android.util.Log;
 
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.books.Adapters.BooksAdapter;
+import com.example.books.Adapters.PageSelectionAdapter;
+import com.example.books.Adapters.PagesAdapter;
 import com.example.books.BookPages;
 import com.example.books.R;
 import com.example.books.VeriablesClasses.RetrivePagesData;
@@ -21,6 +26,7 @@ import java.util.ArrayList;
 
 public class PagesViewer extends AppCompatActivity {
 
+    RecyclerView recyclerView;
     ViewPager2 viewPager2;
     String bookname;
     ArrayList<RetrivePagesData> list;
@@ -30,6 +36,9 @@ public class PagesViewer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pages_viewer);
+
+        recyclerView = findViewById(R.id.horizontal_recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
 
         toolbar = findViewById(R.id.viewpagertoolbar);
         setSupportActionBar(toolbar);
@@ -55,6 +64,9 @@ public class PagesViewer extends AppCompatActivity {
             }, 0);
         }
         viewPager2.setAdapter(new PagerViewerAdapter(list, viewPager2, this, bookname));
+
+        PageSelectionAdapter adapter = new PageSelectionAdapter(list,this, viewPager2);
+        recyclerView.setAdapter(adapter);
 
     }
 
