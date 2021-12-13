@@ -9,9 +9,9 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/offline_card_view_simple"
         android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:layout_gravity="center"
-        android:layout_margin="10sp"
+        android:layout_margin="7sp"
         android:elevation="2dp"
         android:foreground="?attr/selectableItemBackground"
         app:cardCornerRadius="5dp"

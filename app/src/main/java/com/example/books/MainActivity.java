@@ -24,7 +24,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.example.books.Adapters.BooksAdapter;
-import com.example.books.BookMark.BookMarkActivity;
+import com.example.books.BookMark.BookMarkPagees;
 import com.example.books.OfflineBook.OfflineBooks;
 import com.example.books.VeriablesClasses.RetriveBookData;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.bookmarks:
-                        Intent i = new Intent(MainActivity.this, BookMarkActivity.class);
+                        Intent i = new Intent(MainActivity.this, BookMarkPagees.class);
                         startActivity(i);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.toolbarbookmark:
-                Intent intent = new Intent(this, BookMarkActivity.class);
+                Intent intent = new Intent(this, BookMarkPagees.class);
                 startActivity(intent);
             default:
                 return false;

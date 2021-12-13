@@ -18,5 +18,7 @@
         android:id="@+id/dirlistrecyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layoutDirection="rtl"
+        android:layout_marginRight="8sp"
         android:layout_below="@id/offlinetoolbar"/>
 </RelativeLayout>

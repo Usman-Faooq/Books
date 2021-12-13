@@ -4,24 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OfflineBook.OfflineBookPages">
+    tools:context=".OfflineBook.Offline_Page_Slider">
+
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/offlinepagestoolbar"
+        android:id="@+id/offlineviewpagertoolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/purple_700"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="Pages" />
+        app:title="Page_Number" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/offlinepagesrecyclerview"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/offlineviewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10sp"
-        android:layout_marginLeft="15sp"
         android:layoutDirection="rtl"
-        android:layout_marginRight="5sp"
-        android:layout_below="@id/offlinepagestoolbar"/>
+        android:layout_below="@id/offlineviewpagertoolbar"/>
 
 </RelativeLayout>

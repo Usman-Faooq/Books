@@ -48,9 +48,9 @@ public class BookMarkPagees extends AppCompatActivity {
         recyclerView = findViewById(R.id.bookmarkpages_recyclerview);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
 
-        List<BookMarks> list = dao.getallData(book);
+        List<BookMarks> list = dao.retriveData();
 
-        adapter = new BookMarkAdapter(list, true);
+        adapter = new BookMarkAdapter(list, this);
         recyclerView.setAdapter(adapter);
 
 

@@ -21,4 +21,7 @@ public interface DAO {
     @Query("SELECT DISTINCT book_name from BookMarks")
     List<String> getBookName();
 
+    @Query("SELECT * FROM bookmarks")
+    List<BookMarks> retriveData();
+
 }

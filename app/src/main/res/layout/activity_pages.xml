@@ -123,17 +123,6 @@
         android:background="#F1F1F1"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/recentpagenumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/downloadtotalbook"
-            android:layout_marginLeft="15sp"
-            android:layout_marginTop="5sp"
-            android:layout_toRightOf="@+id/page_card_view_simple"
-            android:text="Book Recent Page"
-            android:textSize="17sp" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/recentpageimage"
             android:layout_width="100sp"
@@ -161,6 +150,17 @@
 
             </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/recentpagenumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/downloadtotalbook"
+            android:layout_marginTop="5sp"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/page_card_view_simple"
+            android:text="Book Recent Page"
+            android:textSize="17sp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

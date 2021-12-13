@@ -28,7 +28,7 @@ public class PagesViewer extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ViewPager2 viewPager2;
-    String bookname;
+    String bookname, currentpagenumber;
     ArrayList<RetrivePagesData> list;
     Toolbar toolbar;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -42,12 +42,12 @@ public class PagesViewer extends AppCompatActivity {
 
         toolbar = findViewById(R.id.viewpagertoolbar);
         setSupportActionBar(toolbar);
-         bookname = getIntent().getStringExtra("bookname");
-        String currentpagenumber = getIntent().getStringExtra("currentpagenumber");
+        bookname = getIntent().getStringExtra("bookname");
+        currentpagenumber = getIntent().getStringExtra("currentpagenumber");
         toolbar.setTitle(bookname);
         viewPager2 = findViewById(R.id.viewpager);
         list = getIntent().getParcelableArrayListExtra("BookPages");
-        boolean check = getIntent().getBooleanExtra("",false);
+        boolean check = getIntent().getBooleanExtra("checkactivity",false);
         if (check == true){
             new Handler().postDelayed(new Runnable() {
                 @Override

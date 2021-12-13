@@ -1,15 +1,14 @@
 package com.example.books.OfflineBook;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.View;
+
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.books.OfflineBook.Adapters.OfflineAdapter;
 import com.example.books.R;
 
 import java.util.ArrayList;

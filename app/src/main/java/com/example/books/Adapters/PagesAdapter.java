@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,6 +27,8 @@ import com.example.books.RoomDatabaseClasses.BookMarks;
 import com.example.books.RoomDatabaseClasses.DAO;
 import com.example.books.VeriablesClasses.RetrivePagesData;
 import com.example.books.R;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -55,6 +58,12 @@ public class PagesAdapter extends RecyclerView.Adapter<PagesAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        File storage = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+        File dir = new File(storage.getAbsolutePath()+ "/PDF_Books/"+bookname);
+        if (!dir.exists()){
+            dir.mkdirs();
+        }
+
         Glide.with(holder.imageView.getContext())
                 .load(list.get(position).getPage()).into(holder.imageView);
         holder.textView.setText(list.get(position).getPageNo());
@@ -75,11 +84,43 @@ public class PagesAdapter extends RecyclerView.Adapter<PagesAdapter.MyViewHolder
         holder.downloadbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                File storage = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-                File dir = new File(storage.getAbsolutePath()+ "/PDF_Books/"+bookname);
-                if (!dir.exists()){
-                    dir.mkdirs();
-                }
+
+                //save cover page...
+                Picasso.get().load(list.get(0).getPage()).into(new Target() {
+                    @Override
+                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                        String pagenumber = list.get(0).getPageNo();
+                        String filename = String.format(pagenumber+".jpg");
+                        File coverfile = new File(dir, filename);
+                        if (coverfile.exists()){
+                            Log.e("CoverFile:","Exist");
+                        }else{
+                            try {
+                                outputStream = new FileOutputStream(coverfile);
+                                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+                                Log.e("CoverFile:","Saved");
+                                outputStream.flush();
+                                outputStream.close();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onBitmapFailed(Exception e, Drawable errorDrawable) {
+
+                    }
+
+                    @Override
+                    public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+                    }
+                });
+
+
+
+
 
                 BitmapDrawable drawable = (BitmapDrawable) holder.imageView.getDrawable();
                 Bitmap bitmap = drawable.getBitmap();

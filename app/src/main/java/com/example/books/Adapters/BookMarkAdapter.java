@@ -1,13 +1,15 @@
 package com.example.books.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -15,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.books.BookMark.BookMarkPagees;
+import com.example.books.BookMark.ViewImage;
 import com.example.books.R;
 import com.example.books.RoomDatabaseClasses.BookMarks;
 
@@ -25,17 +28,10 @@ public class BookMarkAdapter extends RecyclerView.Adapter<BookMarkAdapter.MyView
     List<String> list;
     List<BookMarks> bookMarksList;
     Context context;
-    boolean check;
 
-    public BookMarkAdapter(List<BookMarks> bookMarksList, boolean check) {
+    public BookMarkAdapter(List<BookMarks> bookMarksList, Context context) {
         this.bookMarksList = bookMarksList;
-        this.check = check;
-    }
-
-    public BookMarkAdapter(List<String> list, Context context, boolean checkactivity ) {
-        this.list = list;
         this.context = context;
-        this.check = checkactivity;
     }
 
     @NonNull
@@ -46,32 +42,25 @@ public class BookMarkAdapter extends RecyclerView.Adapter<BookMarkAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        if (check == true){
+    public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
             holder.pagenumber.setText(bookMarksList.get(position).getPageNumber()+ " \n " +bookMarksList.get(position).getBookName());
             Glide.with(holder.page.getContext())
                     .load(bookMarksList.get(position).getBookURL()).into(holder.page);
-        }else{
-            String bookname = list.get(position);
-            holder.pagenumber.setText(bookname);
             holder.layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i = new Intent(context, BookMarkPagees.class);
-                    i.putExtra("bookname", bookname);
-                    context.startActivity(i);
+                    Intent intent = new Intent(view.getContext(), ViewImage.class);
+                    holder.page.buildDrawingCache();
+                    Bitmap bitmap = holder.page.getDrawingCache();
+                    intent.putExtra("FullImage",bitmap);
+                    view.getContext().startActivity(intent);
                 }
             });
-        }
     }
 
     @Override
     public int getItemCount() {
-        if (check == true){
-            return  bookMarksList.size();
-        }else{
-            return list.size();
-        }
+        return  bookMarksList.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{

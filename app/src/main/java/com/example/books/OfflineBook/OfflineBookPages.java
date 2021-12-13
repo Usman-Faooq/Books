@@ -6,9 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
+
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.books.OfflineBook.Adapters.OfflinePagesAdapter;
 import com.example.books.R;
 
 import java.io.File;

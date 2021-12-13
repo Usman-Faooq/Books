@@ -20,7 +20,7 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="500sp"
+        android:layout_height="560sp"
         android:layoutDirection="rtl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/horizontal_recyclerview"
         android:layout_width="wrap_content"
-        android:layout_height="200sp"
+        android:layout_height="100sp"
         android:layout_marginTop="12sp"
         android:layout_below="@+id/viewpager"
         android:foregroundGravity="center"

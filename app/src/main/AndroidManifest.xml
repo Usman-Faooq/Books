@@ -14,19 +14,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Books">
         <activity
+            android:name=".OfflineBook.Offline_Page_Slider"
+            android:exported="true" />
+
+        <activity android:name=".BookMark.ViewImage"
+            android:exported="true"/>
+        <activity
             android:name=".OfflineBook.OfflineBookPages"
             android:exported="true" />
         <activity
             android:name=".OfflineBook.OfflineBooks"
             android:exported="true"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".PageSliderWork.PagesViewer"
             android:exported="true" />
-        <activity
-            android:name=".BookMark.BookMarkActivity"
-            android:exported="true"
-            android:parentActivityName=".MainActivity" />
 
         <service
             android:name=".Services.SaveDataService"
@@ -35,7 +37,8 @@
 
         <activity
             android:name=".BookMark.BookMarkPagees"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".BookPages"
             android:exported="true"
